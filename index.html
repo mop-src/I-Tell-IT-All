@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,70 +23,70 @@
     <!-- Header -->
     <header class="text-center space-y-2">
       <h1 class="text-3xl font-extrabold tracking-tight text-zinc-50">I Tell IT all</h1>
-      <p class="text-zinc-400 text-sm font-normal">Suarakan isi hatimu secara anonim!</p>
-      <p class="text-zinc-500 text-xs font-light">Support creator melalui<a href="https://saweria.co/mopit" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-medium ml-1">Saweria</a> atau<a href="https://trakteer.id/mopit" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-medium ml-1">Trakteer</a>.</p>
+      <p class="text-zinc-400 text-sm font-normal">Speak your heart out anonymously!</p>
+      <p class="text-zinc-500 text-xs font-light">Support creator via<a href="https://saweria.co/mopit" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-medium ml-1">Saweria</a> or<a href="https://trakteer.id/mopit" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-medium ml-1">Trakteer</a>.</p>
     </header>
 
     <!-- Form Input Container -->
     <section class="bg-zinc-800/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-zinc-700/60 space-y-6">
       <form id="guestbook-form" class="space-y-4">
 
-        <!-- INPUT TAG KETIKAN BEBAS -->
+        <!-- FREE-FORM TAG INPUT -->
         <div id="tag-container" class="hidden">
-          <label for="message-tag" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-1.5">TAG / KATA KUNCI (OPTIONAL, PISAHKAN DENGAN KOMA)</label>
+          <label for="message-tag" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-1.5">TAGS / KEYWORDS (OPTIONAL, SEPARATE WITH COMMAS)</label>
           <input 
             type="text"
             id="message-tag"
-            placeholder="Contoh: Utarakan, Katakan, Sampaikan"
+            placeholder="Example: Express, Voice, Share"
             class="w-full bg-zinc-900/80 border border-zinc-700 rounded-xl px-4 py-2.5 text-zinc-100 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm transition"
           >
         </div>
 
-        <!-- INPUT PESAN -->
+        <!-- MESSAGE INPUT -->
         <div>
-          <label for="message" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-1.5">PESAN</label>
+          <label for="message" class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-1.5">MESSAGE</label>
           <textarea 
             id="message" 
             rows="3" 
             maxlength="200" 
             required
-            placeholder="Tulis pesan Anda di sini (maksimal 200 karakter)..."
+            placeholder="Write your message here (maximum 200 characters)..."
             class="w-full bg-zinc-900/80 border border-zinc-700 rounded-xl px-4 py-2.5 text-zinc-100 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm resize-none transition"
           ></textarea>
           <div class="text-right text-[11px] text-zinc-500 mt-1"><span id="msg-count">0</span>/200</div>
         </div>
 
-        <!-- TOMBOL KIRIM PESAN -->
+        <!-- SUBMIT MESSAGE BUTTON -->
         <button 
           type="submit" 
           id="submit-btn"
           disabled
           class="hidden w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 px-4 rounded-xl transition duration-200 shadow-md active:scale-[0.99] disabled:opacity-50 cursor-pointer text-sm"
         >
-          Kirim Pesan
+          Send Message
         </button>
 
-        <!-- INDIKATOR PRIVASI ANONIM -->
+        <!-- ANONYMOUS PRIVACY GUARANTEE -->
         <div id="anon-guarantee" class="hidden flex items-center justify-center gap-1.5 text-[11px] text-emerald-400 font-medium pt-1">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
           </svg>
-          Pesan akan otomatis dikirim sebagai nama acak (Anonymous#XXXX).
+          Message will automatically be sent under a random handle (Anonymous#XXXX).
         </div>
 
-        <!-- PERINGATAN SAAT BELUM LOGIN -->
+        <!-- UNAUTHENTICATED WARNING -->
         <div id="login-warning" class="bg-zinc-900/60 border border-zinc-700/80 p-3 rounded-xl text-center text-xs text-amber-400/90 font-medium">
-          Silakan masuk dengan akun Google terlebih dahulu untuk verifikasi anti-spam. Pesan Anda tetap 100% anonim.
+          Please sign in with your Google account first for anti-spam verification. Your message remains 100% anonymous.
         </div>
 
         <p id="form-status" class="text-center text-xs hidden font-medium"></p>
       </form>
 
-      <!-- SEKSI AUTH / LOGIN GOOGLE -->
+      <!-- AUTH / GOOGLE LOGIN SECTION -->
       <div class="border-t border-zinc-700/60 pt-5 mt-4">
-        <!-- Tampilan Saat Belum Login -->
+        <!-- Logged Out View -->
         <div id="auth-logged-out" class="space-y-3">
-          <p class="text-xs text-zinc-400 text-center">Masuk menggunakan Google untuk mengaktifkan form pengiriman pesan.</p>
+          <p class="text-xs text-zinc-400 text-center">Sign in with Google to enable the message sending form.</p>
           <button 
             id="google-login-btn"
             class="w-full flex items-center justify-center gap-3 bg-zinc-900 hover:bg-zinc-950 border border-zinc-700 text-zinc-200 font-medium py-2.5 px-4 rounded-xl transition duration-200 text-sm shadow-sm cursor-pointer"
@@ -97,11 +97,11 @@
               <path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 10.8 0 12s.7 2.3 1.9 4.7l3.7-2.9z"/>
               <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.2-6.4-5.2L1.9 16c1.8 3.7 5.6 7 10.1 7z"/>
             </svg>
-            Masuk dengan Google
+            Sign in with Google
           </button>
         </div>
 
-        <!-- Tampilan Saat Sudah Login -->
+        <!-- Logged In View -->
         <div id="auth-logged-in" class="hidden">
           <div class="flex items-center justify-between bg-zinc-900/70 p-3 rounded-xl border border-zinc-700/60">
             <div class="flex items-center space-x-3">
@@ -112,7 +112,7 @@
               </div>
             </div>
             <button id="logout-btn" class="text-xs text-rose-400 hover:text-rose-300 font-medium px-2.5 py-1 bg-rose-500/10 hover:bg-rose-500/20 rounded-lg transition cursor-pointer shrink-0">
-              Keluar
+              Sign Out
             </button>
           </div>
         </div>
@@ -120,17 +120,17 @@
 
     </section>
 
-    <!-- Daftar Pesan & Fitur Pencarian -->
+    <!-- Message List & Search Feature -->
     <section class="space-y-4">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800 pb-3">
-        <h2 class="text-lg font-bold text-zinc-200">Pesan Pengunjung</h2>
+        <h2 class="text-lg font-bold text-zinc-200">Visitor Messages</h2>
         
-        <!-- BAR PENCARIAN PESAN -->
+        <!-- SEARCH BAR -->
         <div class="relative w-full sm:w-64">
           <input 
             type="text" 
             id="search-input" 
-            placeholder="Cari nama, pesan, atau tag..."
+            placeholder="Search name, message, or tag..."
             class="w-full bg-zinc-800/80 border border-zinc-700 rounded-xl pl-9 pr-3 py-1.5 text-xs text-zinc-100 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
           <svg class="w-4 h-4 text-zinc-500 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,9 +139,9 @@
         </div>
       </div>
       
-      <div id="loading" class="text-center py-6 text-zinc-500 text-sm">Memuat pesan...</div>
+      <div id="loading" class="text-center py-6 text-zinc-500 text-sm">Loading messages...</div>
       
-      <!-- Kontainer Pesan -->
+      <!-- Messages Container -->
       <div id="messages-container" class="space-y-3"></div>
     </section>
 
@@ -149,14 +149,14 @@
 
   <script>
     // ==========================================
-    // 1. KONFIGURASI SUPABASE (DATABASE BARU)
+    // 1. SUPABASE CONFIGURATION
     // ==========================================
     const SUPABASE_URL = 'https://zaheptbiviaqvjsqxwvl.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InphaGVwdGJpdmlhcXZqc3F4d3ZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEwMjIwMjIsImV4cCI6MjEwNjU5ODAyMn0.EDYrILKgk8IuKbp5wfuWbq0PlgeUvlyOPFTUy_ltNiU';
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     // ==========================================
-    // 2. KONFIGURASI FIREBASE (AUTHENTICATION BARU)
+    // 2. FIREBASE CONFIGURATION
     // ==========================================
     const firebaseConfig = {
       apiKey: "AIzaSyCVFXIUMc9-UBrzfMaGp_cBH4Ab2fORM6E",
@@ -199,16 +199,16 @@
     const userName = document.getElementById('user-name');
     const userEmail = document.getElementById('user-email');
 
-    // Counter Karakter Pesan
+    // Message Character Counter
     msgInput.addEventListener('input', () => { msgCount.textContent = msgInput.value.length; });
 
-    // Event Listener Search
+    // Search Event Listener
     searchInput.addEventListener('input', () => {
       renderMessages(searchInput.value.trim().toLowerCase());
     });
 
     // ==========================================
-    // 3. RENDER KARTU PESAN
+    // 3. RENDER MESSAGE CARD
     // ==========================================
     function createMessageCard(name, message, createdAt, messageId = null, tagString = null) {
       const card = document.createElement('div');
@@ -240,17 +240,17 @@
 
       const dateSpan = document.createElement('span');
       dateSpan.className = 'text-xs text-zinc-500';
-      const formattedDate = new Date(createdAt).toLocaleDateString('id-ID', {
+      const formattedDate = new Date(createdAt).toLocaleDateString('en-US', {
         day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit'
       });
       dateSpan.textContent = formattedDate;
       rightHeaderDiv.appendChild(dateSpan);
 
-      // Super Admin Email Hapus (Ganti email ini jika akun admin Anda berubah)
+      // Super Admin Delete Email (Change this email if your admin account changes)
       if (currentUser && currentUser.email === 'indonesiantransformit@gmail.com') {
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'text-xs bg-rose-500/20 hover:bg-rose-500/40 text-rose-300 border border-rose-500/30 px-2 py-0.5 rounded transition cursor-pointer ml-2';
-        deleteBtn.textContent = 'Hapus';
+        deleteBtn.textContent = 'Delete';
         deleteBtn.onclick = () => deleteMessage(messageId);
         rightHeaderDiv.appendChild(deleteBtn);
       }
@@ -280,7 +280,7 @@
       });
 
       if (filtered.length === 0) {
-        container.textContent = searchKeyword ? 'Tidak ada pesan yang cocok dengan pencarian.' : 'Belum ada pesan. Jadilah yang pertama!';
+        container.textContent = searchKeyword ? 'No messages match your search.' : 'No messages yet. Be the first!';
         container.className = 'text-center py-6 text-zinc-500 text-sm';
         return;
       }
@@ -293,7 +293,7 @@
     }
 
     async function deleteMessage(messageId) {
-      if (!confirm("Apakah Anda yakin ingin menghapus pesan ini?")) return;
+      if (!confirm("Are you sure you want to delete this message?")) return;
 
       try {
         const { error } = await supabaseClient
@@ -303,10 +303,10 @@
 
         if (error) throw error;
 
-        alert("Pesan berhasil dihapus!");
+        alert("Message deleted successfully!");
         await loadMessages();
       } catch (err) {
-        alert("Gagal menghapus pesan: " + err.message);
+        alert("Failed to delete message: " + err.message);
       }
     }
 
@@ -350,14 +350,14 @@
       renderMessages(searchInput.value.trim().toLowerCase());
     }
 
-    // Tombol Login Google
+    // Google Login Button
     googleLoginBtn.addEventListener('click', async () => {
       try {
         googleLoginBtn.disabled = true;
-        googleLoginBtn.textContent = 'Mengarahkan ke Google...';
+        googleLoginBtn.textContent = 'Redirecting to Google...';
         await auth.signInWithPopup(googleProvider);
       } catch (err) {
-        alert("Gagal login dengan Google: " + err.message);
+        alert("Google sign-in failed: " + err.message);
         googleLoginBtn.disabled = false;
         googleLoginBtn.innerHTML = `
           <svg class="w-4 h-4" viewBox="0 0 24 24">
@@ -366,19 +366,19 @@
             <path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 10.8 0 12s.7 2.3 1.9 4.7l3.7-2.9z"/>
             <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.2-6.4-5.2L1.9 16c1.8 3.7 5.6 7 10.1 7z"/>
           </svg>
-          Masuk dengan Google
+          Sign in with Google
         `;
       }
     });
 
-    // Tombol Logout
+    // Logout Button
     logoutBtn.addEventListener('click', async () => {
       await auth.signOut();
       googleLoginBtn.disabled = false;
     });
 
     // ==========================================
-    // 5. LOAD & SUBMIT PESAN (SUPABASE)
+    // 5. LOAD & SUBMIT MESSAGE (SUPABASE)
     // ==========================================
     async function loadMessages() {
       try {
@@ -394,16 +394,16 @@
         renderMessages(searchInput.value.trim().toLowerCase());
 
       } catch (err) {
-        loading.textContent = 'Gagal memuat pesan: ' + err.message;
+        loading.textContent = 'Failed to load messages: ' + err.message;
       }
     }
 
-    // PROSES SUBMIT PESAN
+    // PROCESS MESSAGE SUBMIT
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       if (!currentUser) {
-        showStatus('Anda harus login terlebih dahulu untuk mengirim pesan!', 'text-rose-400');
+        showStatus('You must be logged in to send a message!', 'text-rose-400');
         return;
       }
 
@@ -411,16 +411,16 @@
       const rawTags = tagInput ? tagInput.value.trim() : null;
 
       if (!sanitizedMsg) {
-        showStatus('Pesan tidak boleh kosong!', 'text-rose-400');
+        showStatus('Message cannot be empty!', 'text-rose-400');
         return;
       }
 
-      // OTOMATIS GENERATE NAMA ANONIM (Anonymous#XXXX)
+      // AUTOMATICALLY GENERATE ANONYMOUS HANDLE (Anonymous#XXXX)
       const randomNumber = Math.floor(1000 + Math.random() * 9000);
       const autoAnonymousName = `Anonymous#${randomNumber}`;
 
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Mengirim...';
+      submitBtn.textContent = 'Sending...';
 
       try {
         const { error } = await supabaseClient
@@ -435,7 +435,7 @@
 
         if (error) throw error;
 
-        showStatus('Pesan berhasil dikirim!', 'text-emerald-400');
+        showStatus('Message sent successfully!', 'text-emerald-400');
         
         // Reset Form
         msgInput.value = '';
@@ -445,10 +445,10 @@
         await loadMessages();
 
       } catch (err) {
-        showStatus('Gagal mengirim pesan: ' + err.message, 'text-rose-400');
+        showStatus('Failed to send message: ' + err.message, 'text-rose-400');
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Kirim Pesan';
+        submitBtn.textContent = 'Send Message';
       }
     });
 
@@ -461,7 +461,7 @@
       }, 4000);
     }
 
-    // Inisialisasi
+    // Initialize
     initAuth();
   </script>
 </body>
